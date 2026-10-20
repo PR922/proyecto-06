@@ -1,0 +1,274 @@
+/* ==========================================
+1. RESET Y ESTILOS GENERALES (Mobile-First)
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    background-color: #FAF8F1;
+    color: #493B32;
+    min-height: 100vh;
+
+    /* Configuración Grid y Template Areas Mobile-First */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #493B32;
+    font-size: 1rem;
+}
+
+/* Centrado general de imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+/* ==========================================
+2. TIPOGRAFÍAS Y ENCABEZADOS
+   ========================================== */
+h1 {
+    color: #C97855;
+    font-size: 2rem;
+    text-align: center;
+}
+
+h2 {
+    color: #493B32;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h3 {
+    color: #667A4E;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+p {
+    color: #493B32;
+    text-align: left;
+}
+
+/* ==========================================
+3. COMPONENTES Y ASIGNACIÓN DE ÁREAS (Base)
+   ========================================== */
+.header {
+    grid-area: header;
+    background-color: #667A4E;
+    background-image: url("../imagen/fondo-hoja-verde.png");
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav ul li a {
+    background-color: #FAF8F1;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-weight: 500;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+}
+
+.nav ul li a:hover {
+    background-color: #C97855;
+    color: #FAF8F1;
+}
+
+.main {
+    grid-area: main;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.contenido-recetario {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+}
+
+article {
+    background-color: #FAF8F1;
+    border: 1px solid rgba(73, 59, 50, 0.1);
+    border-radius: 10px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+article ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    text-align: left;
+    width: 100%;
+}
+
+article ol {
+    list-style: decimal;
+    padding-left: 1.5rem;
+    text-align: left;
+    width: 100%;
+}
+
+article ul li,
+article ol li {
+    margin-bottom: 0.4rem;
+    color: #493B32;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #667A4E;
+    background-image: url("../imagen/fondo-hoja-verde.png");
+    color: #493B32;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer .redes {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.footer .redes img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.footer .ubicacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.footer .ubicacion iframe {
+    width: 100%;
+    max-width: 300px;
+    height: 180px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* Carrusel estilo banner compacto */
+#carruselRecetas {
+    max-width: 550px;
+    margin: 1.5rem auto;
+}
+
+.carrusel-img-wrapper {
+    height: 190px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carrusel-img-wrapper img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    bottom: 15px;
+    left: 10%;
+    right: 10%;
+}
+
+.carousel-caption h5 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption p {
+    color: #f1f1f1;
+    font-size: 0.85rem;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* ==========================================
+4. MEDIA QUERY: ESCRITORIO (min-width: 1024px)
+   ========================================== */
+@media (min-width: 1024px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    }
+
+    .contenido-recetario.grid-doble {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .contenido-recetario {
+        align-items: center;
+    }
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2rem 3rem;
+    }
+
+    .footer .ubicacion {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+}
